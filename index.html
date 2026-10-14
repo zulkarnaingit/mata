@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mata Jivdani Pooja Sahitya Bhandar</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Pooja samagri, brass items, idols and festival kits in Virar East. Owner: Kalpesh Sheth. Call 082080 01265.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Mukta:wght@400;500;700;800&display=swap">
+<style>
+/* Layout: toran-topped temple-shop front, then shelves of categories, a kit counter, a list builder, and a visit card */
+:root{
+  --bg:#fffaf6; --surface:#ffffff; --tint:#fdeee4;
+  --ink:#3a0d12; --ink-soft:#6e3a3e; --line:#efd4c6;
+  --kumkum:#b3122a; --kumkum-deep:#7d0b1d; --marigold:#f29a0e; --haldi:#f6c445; --leaf:#2f7a3f;
+  --on-accent:#fffaf2;
+  --f-display:"Yatra One","Mukta",system-ui,serif;
+  --f-body:"Mukta",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --r:14px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1a0b0d; --surface:#24110f; --tint:#2e1512;
+  --ink:#fbe9df; --ink-soft:#d9b3a8; --line:#4a2420;
+  --kumkum:#ff5a6a; --kumkum-deep:#e33a4f; --marigold:#ffb23f; --haldi:#ffd36a; --leaf:#6cc47c;
+  --on-accent:#1a0b0d; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1a0b0d; --surface:#24110f; --tint:#2e1512;
+  --ink:#fbe9df; --ink-soft:#d9b3a8; --line:#4a2420;
+  --kumkum:#ff5a6a; --kumkum-deep:#e33a4f; --marigold:#ffb23f; --haldi:#ffd36a; --leaf:#6cc47c;
+  --on-accent:#1a0b0d; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.6;overflow-x:hidden}
+a{color:inherit}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;line-height:1.2;text-wrap:balance;margin:0}
+p{margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+:focus-visible{outline:3px solid var(--marigold);outline-offset:3px;border-radius:6px}
+
+/* Toran */
+.toran{height:46px;background-repeat:repeat-x;background-size:64px 46px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 46'%3E%3Cpath d='M0 4 Q32 14 64 4' stroke='%232f7a3f' stroke-width='3' fill='none'/%3E%3Ccircle cx='16' cy='9' r='5' fill='%23f29a0e'/%3E%3Ccircle cx='48' cy='9' r='5' fill='%23f29a0e'/%3E%3Ccircle cx='32' cy='12' r='5.5' fill='%23f6c445'/%3E%3Cpath d='M32 17 C24 26 26 36 32 44 C38 36 40 26 32 17Z' fill='%232f7a3f'/%3E%3Cpath d='M32 22 L32 40' stroke='%23a6d4ad' stroke-width='1'/%3E%3Ccircle cx='0' cy='6' r='4' fill='%23b3122a'/%3E%3Ccircle cx='64' cy='6' r='4' fill='%23b3122a'/%3E%3C/svg%3E")}
+
+/* Header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
+.brand .mark{width:40px;height:40px;flex:none;border-radius:50%;background:var(--kumkum);display:grid;place-items:center;color:var(--on-accent);font-family:var(--f-display);font-size:20px}
+.brand b{font-family:var(--f-display);font-weight:400;font-size:18px;line-height:1.1;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand small{font-size:12px;color:var(--ink-soft);letter-spacing:.04em}
+.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-weight:500;font-size:15px}
+.nav ul a{text-decoration:none}
+.nav ul a:hover{color:var(--kumkum)}
+@media(max-width:820px){.nav ul{display:none}}
+
+.btn{display:inline-flex;align-items:center;gap:8px;font:700 16px var(--f-body);padding:12px 20px;border-radius:999px;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn-kumkum{background:var(--kumkum);color:var(--on-accent)}
+.btn-kumkum:hover{background:var(--kumkum-deep)}
+.btn-leaf{background:var(--leaf);color:var(--on-accent)}
+.btn-ghost{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn svg{width:18px;height:18px;flex:none}
+.nav .btn{padding:9px 16px;font-size:14px}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;background:radial-gradient(120% 90% at 85% 10%,color-mix(in srgb,var(--haldi) 30%,transparent),transparent 60%),var(--tint)}
+.hero .wrap{display:grid;grid-template-columns:1.25fr .9fr;gap:40px;align-items:center;padding-block:56px 64px}
+.eyebrow{font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:13px;color:var(--kumkum)}
+.jai{font-family:var(--f-display);color:var(--marigold);font-size:22px;margin-bottom:6px}
+.hero h1{font-size:clamp(38px,6.4vw,72px);color:var(--kumkum-deep);margin-top:10px}
+:root[data-theme="dark"] .hero h1{color:var(--ink)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .hero h1{color:var(--ink)}}
+.marathi{font-family:var(--f-display);font-size:clamp(20px,2.6vw,28px);color:var(--ink-soft);margin-top:8px}
+.lede{max-width:52ch;margin-top:18px;font-size:19px;color:var(--ink-soft)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.facts{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:26px;font-size:15px;color:var(--ink-soft)}
+.facts span{display:inline-flex;align-items:center;gap:6px}
+.facts i{width:8px;height:8px;border-radius:50%;background:var(--marigold);display:inline-block}
+
+/* Diya thali illustration */
+.thali{position:relative;aspect-ratio:1;max-width:420px;width:100%;justify-self:center}
+.thali canvas{width:100%;height:100%;display:block}
+.thali .badge{position:absolute;right:0;bottom:8%;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 14px;box-shadow:0 8px 24px color-mix(in srgb,var(--ink) 12%,transparent);font-size:14px;line-height:1.3}
+.thali .badge b{display:block;font-size:16px;color:var(--kumkum)}
+
+@media(max-width:820px){.hero .wrap{grid-template-columns:1fr;padding-block:36px 44px}.thali{max-width:300px;order:-1}}
+
+/* Season strip */
+.season{background:var(--kumkum);color:var(--on-accent)}
+.season .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;padding-block:14px;font-weight:500}
+.season b{font-family:var(--f-display);font-weight:400;font-size:20px}
+.season a{font-weight:700}
+
+/* Sections */
+section.block{padding-block:72px}
+.head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:12px 24px;margin-bottom:32px}
+.head h2{font-size:clamp(30px,4vw,44px)}
+.head p{max-width:46ch;color:var(--ink-soft)}
+
+/* Categories */
+.cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
+.cat{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.cat .ico{width:52px;height:52px;border-radius:12px;background:var(--tint);display:grid;place-items:center}
+.cat .ico svg{width:30px;height:30px}
+.cat h3{font-size:22px}
+.cat .mr{font-size:14px;color:var(--marigold);font-weight:700}
+.cat ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.cat li{font-size:14px;background:var(--tint);border-radius:999px;padding:2px 10px;color:var(--ink-soft)}
+
+/* Kits */
+.kits-bg{background:var(--tint)}
+.kits{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:900px){.kits{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.kits{grid-template-columns:1fr}}
+.kit{background:var(--surface);border-radius:var(--r);padding:22px;border-top:4px solid var(--marigold);display:flex;flex-direction:column;gap:8px}
+.kit:nth-child(3n+2){border-top-color:var(--kumkum)}
+.kit:nth-child(3n){border-top-color:var(--leaf)}
+.kit h3{font-size:21px}
+.kit p{color:var(--ink-soft);font-size:15px}
+.kit a{margin-top:auto;padding-top:8px;font-weight:700;color:var(--kumkum);text-decoration:none}
+.kit a:hover{text-decoration:underline}
+
+/* List builder */
+.builder{display:grid;grid-template-columns:1.3fr 1fr;gap:28px;align-items:start}
+@media(max-width:860px){.builder{grid-template-columns:1fr}}
+.picks{display:flex;flex-wrap:wrap;gap:10px}
+.pick{position:relative}
+.pick input{position:absolute;opacity:0;pointer-events:none}
+.pick label{display:inline-block;padding:9px 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);cursor:pointer;font-weight:500;font-size:15px;user-select:none;transition:all .15s}
+.pick input:checked+label{background:var(--marigold);border-color:var(--marigold);color:#2a0a00}
+.pick input:focus-visible+label{outline:3px solid var(--kumkum);outline-offset:2px}
+.slip{background:var(--surface);border:1px dashed var(--ink-soft);border-radius:var(--r);padding:22px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 80px)}
+.slip h3{font-size:22px}
+.slip ol{margin:12px 0;padding-left:22px;min-height:48px;color:var(--ink)}
+.slip .empty{color:var(--ink-soft);font-size:15px;margin:12px 0}
+.slip textarea{width:100%;min-height:70px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:15px var(--f-body);padding:10px;resize:vertical}
+.slip .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.slip .note{font-size:13px;color:var(--ink-soft);margin-top:10px}
+
+/* Why */
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+@media(max-width:900px){.why{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.why{grid-template-columns:1fr}}
+.why div{border-left:3px solid var(--haldi);padding-left:16px}
+.why h3{font-family:var(--f-body);font-weight:800;font-size:18px}
+.why p{color:var(--ink-soft);font-size:15px;margin-top:4px}
+
+/* Visit */
+.visit{background:var(--kumkum-deep);color:#fff4ea}
+:root[data-theme="dark"] .visit{background:var(--surface);color:var(--ink)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .visit{background:var(--surface);color:var(--ink)}}
+.visit .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;padding-block:72px}
+@media(max-width:820px){.visit .wrap{grid-template-columns:1fr}}
+.visit h2{font-size:clamp(30px,4vw,44px)}
+.visit .lbl{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;opacity:.75;margin-top:22px}
+.visit address{font-style:normal;font-size:18px;margin-top:4px;max-width:40ch}
+.visit .phone{font-size:30px;font-weight:800;letter-spacing:.02em;margin-top:2px;font-variant-numeric:tabular-nums;user-select:all}
+.visit .owner{font-family:var(--f-display);font-size:24px;margin-top:2px}
+.landmarks{display:flex;flex-direction:column;gap:12px}
+.lm{display:flex;gap:14px;align-items:flex-start;background:color-mix(in srgb,currentColor 8%,transparent);border-radius:12px;padding:14px 16px}
+.lm span{flex:none;width:30px;height:30px;border-radius:50%;background:var(--haldi);color:#3a0d12;display:grid;place-items:center;font-weight:800;font-size:14px}
+.visit .btn-light{background:#fff4ea;color:#7d0b1d}
+:root[data-theme="dark"] .visit .btn-light{background:var(--marigold);color:var(--on-accent)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .visit .btn-light{background:var(--marigold);color:var(--on-accent)}}
+.visit .btn-outline{border-color:currentColor;color:inherit;background:transparent}
+.copied{font-size:14px;margin-left:6px;opacity:.85}
+
+footer{padding-block:28px;border-top:1px solid var(--line);font-size:14px;color:var(--ink-soft)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+
+/* Floating WhatsApp */
+.fab{position:fixed;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;width:58px;height:58px;border-radius:50%;background:#25a35a;display:grid;place-items:center;box-shadow:0 8px 20px rgba(0,0,0,.25)}
+.fab svg{width:30px;height:30px}
+
+@media (prefers-reduced-motion:no-preference){
+  .hero h1,.hero .marathi,.hero .lede,.hero .cta{animation:rise .7s both}
+  .hero .marathi{animation-delay:.08s}.hero .lede{animation-delay:.16s}.hero .cta{animation-delay:.24s}
+  @keyframes rise{from{transform:translateY(12px)}to{transform:none}}
+}
+</style>
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+
+<div class="toran" aria-hidden="true"></div>
+<header class="top">
+  <div class="wrap nav">
+    <a class="brand" href="#home">
+      <span class="mark" aria-hidden="true">ॐ</span>
+      <span style="min-width:0"><b>Mata Jivdani</b><small>Pooja Sahitya Bhandar · Virar East</small></span>
+    </a>
+    <ul>
+      <li><a href="#samagri">Samagri</a></li>
+      <li><a href="#kits">Pooja Kits</a></li>
+      <li><a href="#list">Make a List</a></li>
+      <li><a href="#visit">Visit Us</a></li>
+    </ul>
+    <a class="btn btn-kumkum" href="tel:+918208001265">Call Shop</a>
+  </div>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="jai">॥ जय माता दी ॥</p>
+        <p class="eyebrow">Pooja samagri · Virar East</p>
+        <h1>Mata Jivdani Pooja Sahitya Bhandar</h1>
+        <p class="marathi">माता जीवदानी पूजा साहित्य भंडार</p>
+        <p class="lede">Everything for your daily pooja, festivals and family ceremonies, under one roof on Veer Savarkar Marg. Kumkum to kalash, agarbatti to complete pooja kits, packed the way your pandit asks for it.</p>
+        <div class="cta">
+          <a class="btn btn-leaf" href="https://wa.me/918208001265?text=Namaste%2C%20I%20want%20to%20order%20pooja%20samagri." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4Z"/></svg>
+            Order on WhatsApp</a>
+          <a class="btn btn-ghost" href="#visit">Find the shop</a>
+        </div>
+        <div class="facts">
+          <span><i></i>Opp. Shankar Dairy, Gawad Wadi</span>
+          <span><i></i>Phone 082080 01265</span>
+          <span><i></i>Owner: Kalpesh Sheth</span>
+        </div>
+      </div>
+      <div class="thali" aria-hidden="true">
+        <canvas id="diya" width="840" height="840"></canvas>
+        <div class="badge"><b>Festival kits</b>Ready-packed on request</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="season">
+    <div class="wrap">
+      <span><b>Navratri · Dussehra · Diwali</b> &nbsp;Order festival samagri early and pick it up packed.</span>
+      <a href="#list">Make your list →</a>
+    </div>
+  </div>
+
+  <section class="block" id="samagri">
+    <div class="wrap">
+      <div class="head">
+        <h2>Shop by samagri</h2>
+        <p>A look at what we keep on our shelves. Stock changes with the season, so call or WhatsApp to check a specific item.</p>
+      </div>
+      <div class="cats" id="cats"></div>
+    </div>
+  </section>
+
+  <section class="block kits-bg" id="kits">
+    <div class="wrap">
+      <div class="head">
+        <h2>Complete pooja kits</h2>
+        <p>Tell us the pooja and the date. We prepare the full samagri list so nothing is missing when the pandit arrives.</p>
+      </div>
+      <div class="kits" id="kitList"></div>
+    </div>
+  </section>
+
+  <section class="block" id="list">
+    <div class="wrap">
+      <div class="head">
+        <h2>Make your samagri list</h2>
+        <p>Tap the items you need. We'll send your list to the shop on WhatsApp so it can be kept ready for you.</p>
+      </div>
+      <div class="builder">
+        <div class="picks" id="picks"></div>
+        <aside class="slip" aria-live="polite">
+          <h3>Your list</h3>
+          <p class="empty" id="empty">No items yet. Tap items on the left to add them.</p>
+          <ol id="slipList" hidden></ol>
+          <label for="extra" style="font-size:14px;font-weight:700">Anything else? (pooja name, date, quantity)</label>
+          <textarea id="extra" placeholder="e.g. Satyanarayan pooja on Sunday, 5 coconuts"></textarea>
+          <div class="row">
+            <a class="btn btn-leaf" id="sendWa" href="https://wa.me/918208001265" target="_blank" rel="noopener">Send on WhatsApp</a>
+            <button class="btn btn-ghost" id="clear" type="button">Clear</button>
+          </div>
+          <p class="note">Opens WhatsApp with your list filled in. You can review it before sending.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="block kits-bg">
+    <div class="wrap">
+      <div class="head"><h2>Why families in Virar come to us</h2></div>
+      <div class="why">
+        <div><h3>One-stop shop</h3><p>Daily pooja needs, havan items, brass and festival decoration in one place.</p></div>
+        <div><h3>Pandit-ready lists</h3><p>Bring your pandit's list or tell us the pooja. We pack it item by item.</p></div>
+        <div><h3>Fresh, pure samagri</h3><p>Kumkum, haldi, chandan and camphor kept fresh for every season.</p></div>
+        <div><h3>Order on WhatsApp</h3><p>Send your list ahead and collect it without waiting at the counter.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="visit" id="visit">
+    <div class="wrap">
+      <div>
+        <h2>Visit the shop</h2>
+        <p class="lbl">Address</p>
+        <address>Shop No. 3, Veer Savarkar Marg, near Shri Krishna Bar, opposite Shankar Dairy, Gawad Wadi, Virar East, Vasai-Virar, Maharashtra 401305</address>
+        <p class="lbl">Phone &amp; WhatsApp</p>
+        <p class="phone" id="phone">082080 01265</p>
+        <p class="lbl">Owner</p>
+        <p class="owner">Kalpesh Sheth</p>
+        <div class="cta">
+          <a class="btn btn-light" href="https://www.google.com/maps/search/?api=1&query=Mata+Jivdani+Pooja+Sahitya+Bhandar+Virar+East" target="_blank" rel="noopener">Get directions</a>
+          <a class="btn btn-outline" href="tel:+918208001265">Call</a>
+          <button class="btn btn-outline" id="copy" type="button">Copy number</button><span class="copied" id="copied" role="status"></span>
+        </div>
+      </div>
+      <div class="landmarks">
+        <p class="lbl" style="margin-top:0">How to find us</p>
+        <div class="lm"><span>1</span><p>Come to <b>Veer Savarkar Marg</b> in Gawad Wadi, Virar East.</p></div>
+        <div class="lm"><span>2</span><p>Look for <b>Shankar Dairy</b>. We are right across the road.</p></div>
+        <div class="lm"><span>3</span><p>Next to <b>Shri Krishna Bar</b>, at <b>Shop No. 3</b>.</p></div>
+        <div class="lm"><span>✓</span><p>Call <b>082080 01265</b> for timings or to check stock before you come.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Mata Jivdani Pooja Sahitya Bhandar, Virar East</span>
+    <span>Proprietor: Kalpesh Sheth · 082080 01265</span>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/918208001265" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4Z"/></svg>
+</a>
+
+<script>
+const WA = "918208001265";
+const icon = {
+  powder:'<svg viewBox="0 0 32 32"><ellipse cx="16" cy="22" rx="12" ry="5" fill="var(--kumkum)"/><path d="M8 21c2-6 14-6 16 0" fill="var(--kumkum-deep)"/><ellipse cx="16" cy="22" rx="12" ry="2" fill="none" stroke="var(--marigold)" stroke-width="1.5"/></svg>',
+  diya:'<svg viewBox="0 0 32 32"><path d="M4 18h24c-1 6-6 9-12 9S5 24 4 18Z" fill="var(--marigold)"/><path d="M16 4c3 4 3 8 0 11-3-3-3-7 0-11Z" fill="var(--haldi)"/><path d="M16 9c1.3 2 1.3 4 0 5.5-1.3-1.5-1.3-3.5 0-5.5Z" fill="var(--kumkum)"/></svg>',
+  kalash:'<svg viewBox="0 0 32 32"><path d="M9 14c-3 3-3 9 0 12h14c3-3 3-9 0-12Z" fill="var(--marigold)"/><rect x="11" y="11" width="10" height="3" rx="1" fill="var(--kumkum)"/><circle cx="16" cy="7" r="4" fill="var(--leaf)"/></svg>',
+  idol:'<svg viewBox="0 0 32 32"><rect x="6" y="4" width="20" height="24" rx="3" fill="none" stroke="var(--marigold)" stroke-width="2.5"/><circle cx="16" cy="13" r="4" fill="var(--kumkum)"/><path d="M10 25c1-5 11-5 12 0" fill="var(--kumkum)"/></svg>',
+  havan:'<svg viewBox="0 0 32 32"><path d="M5 20h22l-4 8H9Z" fill="var(--kumkum-deep)"/><path d="M16 5c5 5 5 10 1 15h-2c-4-5-4-10 1-15Z" fill="var(--marigold)"/><path d="M16 11c2 3 2 6 0 9-2-3-2-6 0-9Z" fill="var(--haldi)"/></svg>',
+  flower:'<svg viewBox="0 0 32 32"><g fill="var(--marigold)"><circle cx="16" cy="9" r="5"/><circle cx="23" cy="16" r="5"/><circle cx="16" cy="23" r="5"/><circle cx="9" cy="16" r="5"/></g><circle cx="16" cy="16" r="4" fill="var(--kumkum)"/></svg>',
+  cloth:'<svg viewBox="0 0 32 32"><path d="M4 8h24v16H4Z" fill="var(--kumkum)"/><path d="M4 20h24v4H4Z" fill="var(--haldi)"/><path d="M4 8h24v2H4Z" fill="var(--haldi)"/></svg>',
+  book:'<svg viewBox="0 0 32 32"><path d="M4 7c4-1 8-1 12 2v18c-4-3-8-3-12-2Z" fill="var(--marigold)"/><path d="M28 7c-4-1-8-1-12 2v18c4-3 8-3 12-2Z" fill="var(--kumkum)"/></svg>'
+};
+const cats = [
+  ["powder","Kumkum, Haldi & Gulal","कुंकू, हळद, गुलाल",["Kumkum","Haldi","Gulal","Ashtagandh","Chandan","Sindoor","Akshata"]],
+  ["diya","Diyas & Agarbatti","दिवा, अगरबत्ती",["Brass diya","Clay panti","Agarbatti","Dhoop","Kapoor","Cotton vaat","Ghee"]],
+  ["kalash","Brass & Copper","पितळ, तांबे",["Kalash","Pooja thali","Lota","Ghanti","Aarti stand","Panchpatra"]],
+  ["idol","Idols & Photo Frames","मूर्ती, फोटो",["Ganpati","Lakshmi","Devi frames","Balaji","Shivling","Chowki"]],
+  ["havan","Havan Samagri","हवन साहित्य",["Havan kund","Samidha","Havan mix","Gugal","Navgrah samidha"]],
+  ["flower","Toran & Decoration","तोरण, सजावट",["Artificial toran","Rangoli colours","Mala","Kalash decoration","Lighting"]],
+  ["cloth","Vastra & Chunri","वस्त्र, चुनरी",["Mata chunri","Red cloth","Janeu","Moli / nada","Asan"]],
+  ["book","Pothi & Aarti Books","पोथी, आरती",["Aarti sangrah","Satyanarayan katha","Durga saptashati","Panchang"]]
+];
+document.getElementById("cats").innerHTML = cats.map(([i,t,m,items])=>`
+  <article class="cat"><div class="ico">${icon[i]}</div><h3>${t}</h3><p class="mr">${m}</p>
+  <ul>${items.map(x=>`<li>${x}</li>`).join("")}</ul></article>`).join("");
+
+const kits = [
+  ["Satyanarayan Pooja","Full samagri including katha pothi, panchamrut items, kela-pan and prasad essentials."],
+  ["Griha Pravesh & Vastu Shanti","Kalash, toran, havan samagri and everything for moving into a new home."],
+  ["Ganpati Sthapana","Chowki, vastra, durva, modak-ready items and decoration for Ganeshotsav."],
+  ["Navratri Ghatasthapana","Ghat, mata chunri, shringar items, akhand jyot and garbo essentials."],
+  ["Diwali Lakshmi Pooja","Lakshmi-Ganesh, diyas, rangoli colours, khil-batasha and pooja thali."],
+  ["Wedding & Shubh Karya","Haldi ceremony, kanyadaan and mandap pooja samagri as per your pandit's list."]
+];
+document.getElementById("kitList").innerHTML = kits.map(([t,d])=>`
+  <article class="kit"><h3>${t}</h3><p>${d}</p>
+  <a href="https://wa.me/${WA}?text=${encodeURIComponent("Namaste Kalpesh ji, I need the "+t+" kit. Please share details.")}" target="_blank" rel="noopener">Ask for this kit →</a></article>`).join("");
+
+const items = ["Kumkum","Haldi","Gulal","Chandan","Akshata","Agarbatti","Dhoop","Kapoor","Cotton vaat","Ghee","Clay panti","Brass diya","Kalash","Pooja thali","Supari","Nariyal","Pan patta","Janeu","Moli / nada","Mata chunri","Red cloth","Havan samagri","Samidha","Toran","Rangoli colours","Aarti book"];
+const picks = document.getElementById("picks");
+picks.innerHTML = items.map((x,n)=>`<span class="pick"><input type="checkbox" id="it${n}" value="${x}"><label for="it${n}">${x}</label></span>`).join("");
+const slip = document.getElementById("slipList"), empty = document.getElementById("empty"), extra = document.getElementById("extra"), send = document.getElementById("sendWa");
+function update(){
+  const sel=[...picks.querySelectorAll("input:checked")].map(i=>i.value);
+  slip.innerHTML=sel.map(s=>`<li>${s}</li>`).join("");
+  slip.hidden=!sel.length; empty.hidden=!!sel.length;
+  let msg="Namaste Kalpesh ji, please keep these pooja items ready:\n";
+  msg+=sel.map((s,i)=>`${i+1}. ${s}`).join("\n");
+  if(extra.value.trim()) msg+="\n\nNote: "+extra.value.trim();
+  send.href=`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
+}
+picks.addEventListener("change",update); extra.addEventListener("input",update);
+document.getElementById("clear").onclick=()=>{picks.querySelectorAll("input").forEach(i=>i.checked=false);extra.value="";update()};
+update();
+
+document.getElementById("copy").onclick=async()=>{
+  const out=document.getElementById("copied");
+  try{await navigator.clipboard.writeText("08208001265");out.textContent="Copied"}
+  catch(e){const r=document.createRange();r.selectNodeContents(document.getElementById("phone"));const s=getSelection();s.removeAllRanges();s.addRange(r);out.textContent="Selected, press copy"}
+};
+
+/* Diya thali on canvas */
+(function(){
+  const c=document.getElementById("diya"),x=c.getContext("2d"),W=840,C=W/2;
+  const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function draw(t){
+    x.clearRect(0,0,W,W);
+    const kum=css("--kumkum"),mari=css("--marigold"),hal=css("--haldi"),leaf=css("--leaf");
+    // glow
+    const g=x.createRadialGradient(C,C*.82,10,C,C*.82,C);
+    g.addColorStop(0,hal+"88");g.addColorStop(1,hal+"00");x.fillStyle=g;x.fillRect(0,0,W,W);
+    // thali
+    x.fillStyle=mari;x.beginPath();x.ellipse(C,C*1.32,330,92,0,0,Math.PI*2);x.fill();
+    x.fillStyle=hal;x.beginPath();x.ellipse(C,C*1.3,300,78,0,0,Math.PI*2);x.fill();
+    // rangoli dots on rim
+    for(let i=0;i<28;i++){const a=i/28*Math.PI*2;x.fillStyle=i%2?kum:leaf;x.beginPath();x.arc(C+Math.cos(a)*315,C*1.32+Math.sin(a)*85,7,0,7);x.fill()}
+    // flowers
+    [[-200,0],[200,-6],[-120,30],[130,34]].forEach(([dx,dy],k)=>{
+      for(let p=0;p<8;p++){const a=p/8*Math.PI*2;x.fillStyle=k%2?mari:kum;x.beginPath();x.arc(C+dx+Math.cos(a)*22,C*1.27+dy+Math.sin(a)*12,14,0,7);x.fill()}
+      x.fillStyle=hal;x.beginPath();x.arc(C+dx,C*1.27+dy,10,0,7);x.fill()});
+    // kumkum bowls
+    [[-60,40,kum],[60,44,hal]].forEach(([dx,dy,col])=>{x.fillStyle=col;x.beginPath();x.ellipse(C+dx,C*1.3+dy,34,13,0,0,7);x.fill()});
+    // diya
+    x.fillStyle=kum;x.beginPath();x.moveTo(C-120,C*1.1);x.quadraticCurveTo(C,C*1.42,C+150,C*1.08);x.quadraticCurveTo(C+20,C*1.16,C-120,C*1.1);x.fill();
+    x.fillStyle=mari;x.beginPath();x.ellipse(C,C*1.11,120,24,0,0,7);x.fill();
+    // flame
+    const f=reduce?0:Math.sin(t/180)*6+Math.sin(t/77)*3;
+    const fx=C+120,fy=C*1.06;
+    const fg=x.createRadialGradient(fx,fy-60,4,fx,fy-60,120);fg.addColorStop(0,hal+"cc");fg.addColorStop(1,hal+"00");
+    x.fillStyle=fg;x.beginPath();x.arc(fx,fy-60,120,0,7);x.fill();
+    x.fillStyle=hal;x.beginPath();x.moveTo(fx,fy);x.bezierCurveTo(fx-40,fy-40,fx-10+f,fy-110,fx+f,fy-150);x.bezierCurveTo(fx+10+f,fy-110,fx+40,fy-40,fx,fy);x.fill();
+    x.fillStyle=mari;x.beginPath();x.moveTo(fx,fy-4);x.bezierCurveTo(fx-20,fy-30,fx-4+f/2,fy-70,fx+f/2,fy-92);x.bezierCurveTo(fx+4+f/2,fy-70,fx+20,fy-30,fx,fy-4);x.fill();
+    // Om
+    x.fillStyle=kum;x.font="140px 'Yatra One', serif";x.textAlign="center";x.fillText("ॐ",C,C*.62);
+    if(!reduce)requestAnimationFrame(draw);
+  }
+  (document.fonts?document.fonts.ready:Promise.resolve()).then(()=>requestAnimationFrame(draw));
+  requestAnimationFrame(draw);
+})();
+</script>
+
+</body>
+</html>
