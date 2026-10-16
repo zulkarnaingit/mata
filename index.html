@@ -62,7 +62,8 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;backgroun
 .btn-leaf{background:var(--leaf);color:var(--on-accent)}
 .btn-ghost{border-color:var(--ink);color:var(--ink);background:transparent}
 .btn svg{width:18px;height:18px;flex:none}
-.nav .btn{padding:9px 16px;font-size:14px}
+.nav .btn{padding:9px 16px;font-size:14px;white-space:nowrap}
+@media(max-width:420px){.brand small{display:none}}
 
 /* Hero */
 .hero{position:relative;overflow:hidden;background:radial-gradient(120% 90% at 85% 10%,color-mix(in srgb,var(--haldi) 30%,transparent),transparent 60%),var(--tint)}
@@ -79,13 +80,41 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;backgroun
 .facts span{display:inline-flex;align-items:center;gap:6px}
 .facts i{width:8px;height:8px;border-radius:50%;background:var(--marigold);display:inline-block}
 
-/* Diya thali illustration */
-.thali{position:relative;aspect-ratio:1;max-width:420px;width:100%;justify-self:center}
-.thali canvas{width:100%;height:100%;display:block}
-.thali .badge{position:absolute;right:0;bottom:8%;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 14px;box-shadow:0 8px 24px color-mix(in srgb,var(--ink) 12%,transparent);font-size:14px;line-height:1.3}
-.thali .badge b{display:block;font-size:16px;color:var(--kumkum)}
+/* Photo slider hero */
+.slider{position:relative;height:min(82vh,720px);min-height:600px;overflow:hidden;background:#1a0b0d;color:#fff}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1s ease;pointer-events:none}
+.slide.on{opacity:1;pointer-events:auto}
+.slide img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.04)}
+@media (prefers-reduced-motion:no-preference){.slide.on img{animation:kb 7s ease-out forwards}@keyframes kb{from{transform:scale(1.12)}to{transform:scale(1.02)}}}
+.slide::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(40,6,10,.88) 0%,rgba(40,6,10,.55) 45%,rgba(40,6,10,.05) 80%),linear-gradient(0deg,rgba(20,4,6,.55),transparent 40%)}
+.slide .cap{position:absolute;inset:0;z-index:2;display:flex;align-items:center;padding-bottom:56px}
+.slide .cap .wrap{width:100%}
+.slide .cap .in{max-width:620px}
+.slider .jai{color:var(--haldi)}
+.slider .eyebrow{color:#ffd9a0}
+.slider h1,.slider h2.big{font-size:clamp(34px,5.6vw,64px);color:#fff;margin-top:8px;text-shadow:0 2px 18px rgba(0,0,0,.35)}
+.slider .marathi{color:#ffe6c9}
+.slider .lede{color:#fbe6dc}
+.slider .btn-ghost{border-color:#fff;color:#fff}
+.slider .facts{color:#f3d6c9}
+.sl-ctrl{position:absolute;z-index:5;bottom:22px;left:0;right:0}
+.sl-ctrl .wrap{display:flex;align-items:center;gap:14px}
+.dots{display:flex;gap:8px}
+.dots button{width:34px;height:5px;border:0;border-radius:4px;background:rgba(255,255,255,.4);cursor:pointer;padding:0;transition:all .3s}
+.dots button[aria-current="true"]{background:var(--haldi);width:56px}
+.arrows{margin-left:auto;display:flex;gap:8px}
+.arrows button{width:46px;height:46px;border-radius:50%;border:1.5px solid rgba(255,255,255,.6);background:rgba(0,0,0,.25);color:#fff;font-size:20px;cursor:pointer;backdrop-filter:blur(4px)}
+.arrows button:hover{background:var(--kumkum);border-color:var(--kumkum)}
+@media(max-width:640px){.slider{min-height:640px}.slider .facts{display:none}.slider .marathi{font-size:19px}.slide::after{background:linear-gradient(0deg,rgba(40,6,10,.92) 0%,rgba(40,6,10,.6) 55%,rgba(40,6,10,.15) 100%)}.slide .cap{align-items:flex-end;padding-bottom:70px}.slider .lede{font-size:16px}.arrows{display:none}}
 
-@media(max-width:820px){.hero .wrap{grid-template-columns:1fr;padding-block:36px 44px}.thali{max-width:300px;order:-1}}
+/* Photo strip */
+.strip{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:190px;gap:12px}
+.strip a{position:relative;border-radius:var(--r);overflow:hidden;display:block}
+.strip a:nth-child(1){grid-column:span 2;grid-row:span 2}
+.strip img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.strip a:hover img{transform:scale(1.06)}
+.strip span{position:absolute;left:10px;bottom:10px;background:rgba(26,11,13,.72);color:#fff;font-size:13px;font-weight:700;padding:3px 10px;border-radius:999px}
+@media(max-width:700px){.strip{grid-template-columns:repeat(2,1fr);grid-auto-rows:140px}}
 
 /* Season strip */
 .season{background:var(--kumkum);color:var(--on-accent)}
@@ -175,9 +204,9 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
 .fab svg{width:30px;height:30px}
 
 @media (prefers-reduced-motion:no-preference){
-  .hero h1,.hero .marathi,.hero .lede,.hero .cta{animation:rise .7s both}
-  .hero .marathi{animation-delay:.08s}.hero .lede{animation-delay:.16s}.hero .cta{animation-delay:.24s}
-  @keyframes rise{from{transform:translateY(12px)}to{transform:none}}
+  .slide.on .in>*{animation:rise .8s both}
+  .slide.on .in>*:nth-child(2){animation-delay:.1s}.slide.on .in>*:nth-child(3){animation-delay:.2s}.slide.on .in>*:nth-child(4){animation-delay:.3s}.slide.on .in>*:nth-child(n+5){animation-delay:.4s}
+  @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 }
 </style>
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
@@ -187,7 +216,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
 <div class="toran" aria-hidden="true"></div>
 <header class="top">
   <div class="wrap nav">
-    <a class="brand" href="#home">
+    <a class="brand" href="index.html">
       <span class="mark" aria-hidden="true">ॐ</span>
       <span style="min-width:0"><b>Mata Jivdani</b><small>Pooja Sahitya Bhandar · Virar East</small></span>
     </a>
@@ -195,6 +224,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
       <li><a href="#samagri">Samagri</a></li>
       <li><a href="#kits">Pooja Kits</a></li>
       <li><a href="#list">Make a List</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
       <li><a href="#visit">Visit Us</a></li>
     </ul>
     <a class="btn btn-kumkum" href="tel:+918208001265">Call Shop</a>
@@ -202,9 +232,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
 </header>
 
 <main id="home">
-  <section class="hero">
-    <div class="wrap">
-      <div>
+  <section class="slider" id="slider" aria-roledescription="carousel" aria-label="Shop photos">
+    <div class="slide on" aria-roledescription="slide">
+      <img src="images/shop-30.jpg" alt="Mata Jivdani Pooja Sahitya Bhandar shopfront with yellow signboard">
+      <div class="cap"><div class="wrap"><div class="in">
         <p class="jai">॥ जय माता दी ॥</p>
         <p class="eyebrow">Pooja samagri · Virar East</p>
         <h1>Mata Jivdani Pooja Sahitya Bhandar</h1>
@@ -221,12 +252,39 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
           <span><i></i>Phone 082080 01265</span>
           <span><i></i>Owner: Kalpesh Sheth</span>
         </div>
-      </div>
-      <div class="thali" aria-hidden="true">
-        <canvas id="diya" width="840" height="840"></canvas>
-        <div class="badge"><b>Festival kits</b>Ready-packed on request</div>
-      </div>
+      </div></div></div>
     </div>
+    <div class="slide" aria-roledescription="slide">
+      <img src="images/shop-07.jpg" alt="Shelves of brass idols of Ganesh, Lakshmi and other deities" loading="lazy">
+      <div class="cap"><div class="wrap"><div class="in">
+        <p class="eyebrow">Brass murti collection</p>
+        <h2 class="big">Divine idols in brass &amp; silver finish</h2>
+        <p class="lede">Ganpati, Lakshmi, Balaji, Shiv Parivar and more, in every size for your home mandir.</p>
+        <div class="cta"><a class="btn btn-kumkum" href="gallery.html#idols">See idols</a><a class="btn btn-ghost" href="https://wa.me/918208001265?text=Namaste%2C%20I%20want%20to%20ask%20about%20brass%20idols." target="_blank" rel="noopener">Ask on WhatsApp</a></div>
+      </div></div></div>
+    </div>
+    <div class="slide" aria-roledescription="slide">
+      <img src="images/shop-19.jpg" alt="Shop shelves stocked with pooja samagri jars and packets" loading="lazy">
+      <div class="cap"><div class="wrap"><div class="in">
+        <p class="eyebrow">Daily &amp; havan samagri</p>
+        <h2 class="big">Every item your pandit asks for</h2>
+        <p class="lede">Kumkum, haldi, chandan, dhoop, kapoor, samidha and havan mix, kept fresh all year.</p>
+        <div class="cta"><a class="btn btn-kumkum" href="#list">Make your list</a><a class="btn btn-ghost" href="#kits">Pooja kits</a></div>
+      </div></div></div>
+    </div>
+    <div class="slide" aria-roledescription="slide">
+      <img src="images/shop-20.jpg" alt="Wall of framed devotional pictures of gods and goddesses" loading="lazy">
+      <div class="cap"><div class="wrap"><div class="in">
+        <p class="eyebrow">Photo frames &amp; decoration</p>
+        <h2 class="big">Bring blessings home for every festival</h2>
+        <p class="lede">Devi frames, torans, malas and rangoli colours for Navratri, Diwali and Ganeshotsav.</p>
+        <div class="cta"><a class="btn btn-kumkum" href="gallery.html">View gallery</a><a class="btn btn-ghost" href="#visit">Visit the shop</a></div>
+      </div></div></div>
+    </div>
+    <div class="sl-ctrl"><div class="wrap">
+      <div class="dots" role="tablist" aria-label="Choose slide"></div>
+      <div class="arrows"><button type="button" id="prev" aria-label="Previous slide">‹</button><button type="button" id="next" aria-label="Next slide">›</button></div>
+    </div></div>
   </section>
 
   <div class="season">
@@ -243,6 +301,22 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
         <p>A look at what we keep on our shelves. Stock changes with the season, so call or WhatsApp to check a specific item.</p>
       </div>
       <div class="cats" id="cats"></div>
+    </div>
+  </section>
+
+  <section class="block" id="photos" style="padding-top:0">
+    <div class="wrap">
+      <div class="head">
+        <h2>Inside our shop</h2>
+        <p>A peek at the shelves. <a href="gallery.html" style="color:var(--kumkum);font-weight:700">See all 31 photos →</a></p>
+      </div>
+      <div class="strip">
+        <a href="gallery.html"><img src="images/shop-29.jpg" alt="Shopfront" loading="lazy"><span>Our shop</span></a>
+        <a href="gallery.html#idols"><img src="images/shop-15.jpg" alt="Devi murti" loading="lazy"><span>Devi murti</span></a>
+        <a href="gallery.html#brass"><img src="images/shop-04.jpg" alt="Copper items" loading="lazy"><span>Copper &amp; brass</span></a>
+        <a href="gallery.html#samagri"><img src="images/shop-23.jpg" alt="Rangoli and gulal colours" loading="lazy"><span>Gulal &amp; rangoli</span></a>
+        <a href="gallery.html#decor"><img src="images/shop-26.jpg" alt="Flower garlands" loading="lazy"><span>Malas &amp; toran</span></a>
+      </div>
     </div>
   </section>
 
@@ -391,44 +465,21 @@ document.getElementById("copy").onclick=async()=>{
   catch(e){const r=document.createRange();r.selectNodeContents(document.getElementById("phone"));const s=getSelection();s.removeAllRanges();s.addRange(r);out.textContent="Selected, press copy"}
 };
 
-/* Diya thali on canvas */
+/* Slider */
 (function(){
-  const c=document.getElementById("diya"),x=c.getContext("2d"),W=840,C=W/2;
-  const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
-  const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
-  function draw(t){
-    x.clearRect(0,0,W,W);
-    const kum=css("--kumkum"),mari=css("--marigold"),hal=css("--haldi"),leaf=css("--leaf");
-    // glow
-    const g=x.createRadialGradient(C,C*.82,10,C,C*.82,C);
-    g.addColorStop(0,hal+"88");g.addColorStop(1,hal+"00");x.fillStyle=g;x.fillRect(0,0,W,W);
-    // thali
-    x.fillStyle=mari;x.beginPath();x.ellipse(C,C*1.32,330,92,0,0,Math.PI*2);x.fill();
-    x.fillStyle=hal;x.beginPath();x.ellipse(C,C*1.3,300,78,0,0,Math.PI*2);x.fill();
-    // rangoli dots on rim
-    for(let i=0;i<28;i++){const a=i/28*Math.PI*2;x.fillStyle=i%2?kum:leaf;x.beginPath();x.arc(C+Math.cos(a)*315,C*1.32+Math.sin(a)*85,7,0,7);x.fill()}
-    // flowers
-    [[-200,0],[200,-6],[-120,30],[130,34]].forEach(([dx,dy],k)=>{
-      for(let p=0;p<8;p++){const a=p/8*Math.PI*2;x.fillStyle=k%2?mari:kum;x.beginPath();x.arc(C+dx+Math.cos(a)*22,C*1.27+dy+Math.sin(a)*12,14,0,7);x.fill()}
-      x.fillStyle=hal;x.beginPath();x.arc(C+dx,C*1.27+dy,10,0,7);x.fill()});
-    // kumkum bowls
-    [[-60,40,kum],[60,44,hal]].forEach(([dx,dy,col])=>{x.fillStyle=col;x.beginPath();x.ellipse(C+dx,C*1.3+dy,34,13,0,0,7);x.fill()});
-    // diya
-    x.fillStyle=kum;x.beginPath();x.moveTo(C-120,C*1.1);x.quadraticCurveTo(C,C*1.42,C+150,C*1.08);x.quadraticCurveTo(C+20,C*1.16,C-120,C*1.1);x.fill();
-    x.fillStyle=mari;x.beginPath();x.ellipse(C,C*1.11,120,24,0,0,7);x.fill();
-    // flame
-    const f=reduce?0:Math.sin(t/180)*6+Math.sin(t/77)*3;
-    const fx=C+120,fy=C*1.06;
-    const fg=x.createRadialGradient(fx,fy-60,4,fx,fy-60,120);fg.addColorStop(0,hal+"cc");fg.addColorStop(1,hal+"00");
-    x.fillStyle=fg;x.beginPath();x.arc(fx,fy-60,120,0,7);x.fill();
-    x.fillStyle=hal;x.beginPath();x.moveTo(fx,fy);x.bezierCurveTo(fx-40,fy-40,fx-10+f,fy-110,fx+f,fy-150);x.bezierCurveTo(fx+10+f,fy-110,fx+40,fy-40,fx,fy);x.fill();
-    x.fillStyle=mari;x.beginPath();x.moveTo(fx,fy-4);x.bezierCurveTo(fx-20,fy-30,fx-4+f/2,fy-70,fx+f/2,fy-92);x.bezierCurveTo(fx+4+f/2,fy-70,fx+20,fy-30,fx,fy-4);x.fill();
-    // Om
-    x.fillStyle=kum;x.font="140px 'Yatra One', serif";x.textAlign="center";x.fillText("ॐ",C,C*.62);
-    if(!reduce)requestAnimationFrame(draw);
-  }
-  (document.fonts?document.fonts.ready:Promise.resolve()).then(()=>requestAnimationFrame(draw));
-  requestAnimationFrame(draw);
+  const root=document.getElementById("slider"),slides=[...root.querySelectorAll(".slide")],dots=root.querySelector(".dots");
+  let i=0,timer;
+  slides.forEach((_,n)=>{const b=document.createElement("button");b.type="button";b.setAttribute("aria-label","Slide "+(n+1));b.onclick=()=>{go(n);restart()};dots.appendChild(b)});
+  function go(n){slides[i].classList.remove("on");slides[i].setAttribute("aria-hidden","true");i=(n+slides.length)%slides.length;slides[i].classList.add("on");slides[i].removeAttribute("aria-hidden");
+    [...dots.children].forEach((d,k)=>d.setAttribute("aria-current",k===i))}
+  function restart(){clearInterval(timer);if(!matchMedia("(prefers-reduced-motion: reduce)").matches)timer=setInterval(()=>go(i+1),5500)}
+  document.getElementById("prev").onclick=()=>{go(i-1);restart()};
+  document.getElementById("next").onclick=()=>{go(i+1);restart()};
+  root.addEventListener("mouseenter",()=>clearInterval(timer));root.addEventListener("mouseleave",restart);
+  let x0=null;root.addEventListener("touchstart",e=>x0=e.touches[0].clientX,{passive:true});
+  root.addEventListener("touchend",e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40){go(i+(dx<0?1:-1));restart()}x0=null});
+  slides.forEach((s,k)=>{if(k)s.setAttribute("aria-hidden","true")});
+  go(0);restart();
 })();
 </script>
 

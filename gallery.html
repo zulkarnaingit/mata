@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gallery · Mata Jivdani Pooja Sahitya Bhandar</title>
+<meta name="description" content="Photos of Mata Jivdani Pooja Sahitya Bhandar, Virar East: idols, brass items, pooja samagri and decoration.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Mukta:wght@400;500;700;800&display=swap">
+<style>
+/* Layout: toran-topped temple-shop front, then shelves of categories, a kit counter, a list builder, and a visit card */
+:root{
+  --bg:#fffaf6; --surface:#ffffff; --tint:#fdeee4;
+  --ink:#3a0d12; --ink-soft:#6e3a3e; --line:#efd4c6;
+  --kumkum:#b3122a; --kumkum-deep:#7d0b1d; --marigold:#f29a0e; --haldi:#f6c445; --leaf:#2f7a3f;
+  --on-accent:#fffaf2;
+  --f-display:"Yatra One","Mukta",system-ui,serif;
+  --f-body:"Mukta",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --r:14px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1a0b0d; --surface:#24110f; --tint:#2e1512;
+  --ink:#fbe9df; --ink-soft:#d9b3a8; --line:#4a2420;
+  --kumkum:#ff5a6a; --kumkum-deep:#e33a4f; --marigold:#ffb23f; --haldi:#ffd36a; --leaf:#6cc47c;
+  --on-accent:#1a0b0d; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1a0b0d; --surface:#24110f; --tint:#2e1512;
+  --ink:#fbe9df; --ink-soft:#d9b3a8; --line:#4a2420;
+  --kumkum:#ff5a6a; --kumkum-deep:#e33a4f; --marigold:#ffb23f; --haldi:#ffd36a; --leaf:#6cc47c;
+  --on-accent:#1a0b0d; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.6;overflow-x:hidden}
+a{color:inherit}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;line-height:1.2;text-wrap:balance;margin:0}
+p{margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+:focus-visible{outline:3px solid var(--marigold);outline-offset:3px;border-radius:6px}
+
+/* Toran */
+.toran{height:46px;background-repeat:repeat-x;background-size:64px 46px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 46'%3E%3Cpath d='M0 4 Q32 14 64 4' stroke='%232f7a3f' stroke-width='3' fill='none'/%3E%3Ccircle cx='16' cy='9' r='5' fill='%23f29a0e'/%3E%3Ccircle cx='48' cy='9' r='5' fill='%23f29a0e'/%3E%3Ccircle cx='32' cy='12' r='5.5' fill='%23f6c445'/%3E%3Cpath d='M32 17 C24 26 26 36 32 44 C38 36 40 26 32 17Z' fill='%232f7a3f'/%3E%3Cpath d='M32 22 L32 40' stroke='%23a6d4ad' stroke-width='1'/%3E%3Ccircle cx='0' cy='6' r='4' fill='%23b3122a'/%3E%3Ccircle cx='64' cy='6' r='4' fill='%23b3122a'/%3E%3C/svg%3E")}
+
+/* Header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
+.brand .mark{width:40px;height:40px;flex:none;border-radius:50%;background:var(--kumkum);display:grid;place-items:center;color:var(--on-accent);font-family:var(--f-display);font-size:20px}
+.brand b{font-family:var(--f-display);font-weight:400;font-size:18px;line-height:1.1;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand small{font-size:12px;color:var(--ink-soft);letter-spacing:.04em}
+.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-weight:500;font-size:15px}
+.nav ul a{text-decoration:none}
+.nav ul a:hover{color:var(--kumkum)}
+@media(max-width:820px){.nav ul{display:none}}
+
+.btn{display:inline-flex;align-items:center;gap:8px;font:700 16px var(--f-body);padding:12px 20px;border-radius:999px;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn-kumkum{background:var(--kumkum);color:var(--on-accent)}
+.btn-kumkum:hover{background:var(--kumkum-deep)}
+.btn-leaf{background:var(--leaf);color:var(--on-accent)}
+.btn-ghost{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn svg{width:18px;height:18px;flex:none}
+.nav .btn{padding:9px 16px;font-size:14px;white-space:nowrap}
+@media(max-width:420px){.brand small{display:none}}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;background:radial-gradient(120% 90% at 85% 10%,color-mix(in srgb,var(--haldi) 30%,transparent),transparent 60%),var(--tint)}
+.hero .wrap{display:grid;grid-template-columns:1.25fr .9fr;gap:40px;align-items:center;padding-block:56px 64px}
+.eyebrow{font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:13px;color:var(--kumkum)}
+.jai{font-family:var(--f-display);color:var(--marigold);font-size:22px;margin-bottom:6px}
+.hero h1{font-size:clamp(38px,6.4vw,72px);color:var(--kumkum-deep);margin-top:10px}
+:root[data-theme="dark"] .hero h1{color:var(--ink)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .hero h1{color:var(--ink)}}
+.marathi{font-family:var(--f-display);font-size:clamp(20px,2.6vw,28px);color:var(--ink-soft);margin-top:8px}
+.lede{max-width:52ch;margin-top:18px;font-size:19px;color:var(--ink-soft)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.facts{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:26px;font-size:15px;color:var(--ink-soft)}
+.facts span{display:inline-flex;align-items:center;gap:6px}
+.facts i{width:8px;height:8px;border-radius:50%;background:var(--marigold);display:inline-block}
+
+
+/* Gallery */
+.ghero{background:radial-gradient(120% 90% at 85% 10%,color-mix(in srgb,var(--haldi) 30%,transparent),transparent 60%),var(--tint);padding-block:52px 40px;text-align:center}
+.ghero h1{font-size:clamp(36px,5.6vw,60px);color:var(--kumkum-deep)}
+:root[data-theme="dark"] .ghero h1{color:var(--ink)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ghero h1{color:var(--ink)}}
+.ghero p.lede{margin:12px auto 0}
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:28px 0 30px}
+.tabs button{font:600 15px var(--f-body);padding:9px 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;transition:all .2s}
+.tabs button b{font-weight:800;color:var(--marigold);margin-left:4px}
+.tabs button.on{background:var(--kumkum);border-color:var(--kumkum);color:var(--on-accent)}
+.tabs button.on b{color:var(--haldi)}
+.grid{columns:4 240px;column-gap:14px;padding-bottom:72px}
+.g{break-inside:avoid;margin:0 0 14px;border-radius:var(--r);overflow:hidden;background:var(--surface);box-shadow:0 4px 18px color-mix(in srgb,var(--ink) 10%,transparent)}
+.g button{all:unset;display:block;cursor:zoom-in;position:relative;width:100%}
+.g button:focus-visible{outline:3px solid var(--marigold);outline-offset:-3px}
+.g img{width:100%;display:block;transition:transform .5s}
+.g:hover img{transform:scale(1.05)}
+.g figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 12px 10px;color:#fff;font-size:14px;font-weight:600;background:linear-gradient(0deg,rgba(26,6,10,.8),transparent);opacity:0;transition:opacity .3s}
+.g:hover figcaption,.g button:focus-visible figcaption{opacity:1}
+@media(hover:none){.g figcaption{opacity:1}}
+@media (prefers-reduced-motion:no-preference){.g{animation:fade .5s both}@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}}
+/* Lightbox */
+.lb{position:fixed;inset:0;z-index:50;background:rgba(15,4,6,.97);display:flex;align-items:center;justify-content:center;padding:60px 16px 80px}
+.lb img{max-width:100%;max-height:100%;object-fit:contain;border-radius:8px;box-shadow:0 10px 40px rgba(0,0,0,.5)}
+.lb .cap{position:absolute;bottom:24px;left:16px;right:16px;text-align:center;color:#fbe6dc;font-size:16px}
+.lb .cap b{color:var(--haldi);margin-right:8px}
+.lb button{position:absolute;width:50px;height:50px;border-radius:50%;border:1.5px solid rgba(255,255,255,.5);background:rgba(0,0,0,.35);color:#fff;font-size:24px;cursor:pointer}
+.lb button:hover{background:#b3122a;border-color:#b3122a}
+.lb .x{top:calc(14px + env(safe-area-inset-top,0px));right:16px}
+.lb .pv{left:16px;top:50%;transform:translateY(-50%)}
+.lb .nx{right:16px;top:50%;transform:translateY(-50%)}
+.cta-band{background:var(--kumkum);color:var(--on-accent);text-align:center;padding-block:44px}
+.cta-band h2{font-size:clamp(26px,3.6vw,38px)}
+.cta-band .cta{justify-content:center}
+.cta-band .btn-light{background:#fff4ea;color:#7d0b1d}
+.cta-band .btn-outline{border-color:currentColor;color:inherit}
+</style>
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+
+<div class="toran" aria-hidden="true"></div>
+<header class="top">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <span class="mark" aria-hidden="true">ॐ</span>
+      <span style="min-width:0"><b>Mata Jivdani</b><small>Pooja Sahitya Bhandar · Virar East</small></span>
+    </a>
+    <ul>
+      <li><a href="index.html#samagri">Samagri</a></li>
+      <li><a href="index.html#kits">Pooja Kits</a></li>
+      <li><a href="index.html#list">Make a List</a></li>
+      <li><a href="gallery.html" aria-current="page" style="color:var(--kumkum)">Gallery</a></li>
+      <li><a href="index.html#visit">Visit Us</a></li>
+    </ul>
+    <a class="btn btn-kumkum" href="tel:+918208001265">Call Shop</a>
+  </div>
+</header>
+
+<main>
+  <section class="ghero">
+    <div class="wrap">
+      <p class="jai">॥ जय माता दी ॥</p>
+      <h1>Photo Gallery</h1>
+      <p class="marathi">आमच्या दुकानाची झलक</p>
+      <p class="lede">Take a look around Mata Jivdani Pooja Sahitya Bhandar: our idols, brass and copper ware, everyday samagri and festival decoration. Tap any photo to see it larger.</p>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="tabs" role="toolbar" aria-label="Filter photos"><button type="button" class="on" data-f="all">All <b>31</b></button><button type="button" data-f="shop">Our Shop <b>6</b></button><button type="button" data-f="idols">Idols & Murti <b>8</b></button><button type="button" data-f="brass">Brass & Copper <b>2</b></button><button type="button" data-f="samagri">Pooja Samagri <b>11</b></button><button type="button" data-f="decor">Frames & Decoration <b>4</b></button></div>
+      <div class="grid" id="grid">
+      <figure class="g" data-cat="shop"><button type="button" data-i="0"><img src="images/shop-01.jpg" alt="Shop counter" loading="lazy"><figcaption>Shop counter</figcaption></button></figure>
+      <figure class="g" data-cat="shop"><button type="button" data-i="1"><img src="images/shop-02.jpg" alt="Malas and rudraksha on display" loading="lazy"><figcaption>Malas and rudraksha on display</figcaption></button></figure>
+      <figure class="g" data-cat="shop"><button type="button" data-i="2"><img src="images/shop-18.jpg" alt="Inside the shop aisle" loading="lazy"><figcaption>Inside the shop aisle</figcaption></button></figure>
+      <figure class="g" data-cat="shop"><button type="button" data-i="3"><img src="images/shop-27.jpg" alt="Shop entrance with torans" loading="lazy"><figcaption>Shop entrance with torans</figcaption></button></figure>
+      <figure class="g" data-cat="shop"><button type="button" data-i="4"><img src="images/shop-29.jpg" alt="Shopfront signboard" loading="lazy"><figcaption>Shopfront signboard</figcaption></button></figure>
+      <figure class="g" data-cat="shop"><button type="button" data-i="5"><img src="images/shop-30.jpg" alt="Shopfront with signboard" loading="lazy"><figcaption>Shopfront with signboard</figcaption></button></figure>
+      <figure class="g" data-cat="idols"><button type="button" data-i="6"><img src="images/shop-03.jpg" alt="Brass and silver idols in a glass case" loading="lazy"><figcaption>Brass and silver idols in a glass case</figcaption></button></figure>
+      <figure class="g" data-cat="idols"><button type="button" data-i="7"><img src="images/shop-05.jpg" alt="Brass Ganesh and deity idols" loading="lazy"><figcaption>Brass Ganesh and deity idols</figcaption></button></figure>
+      <figure class="g" data-cat="idols"><button type="button" data-i="8"><img src="images/shop-07.jpg" alt="Shelf of brass idols" loading="lazy"><figcaption>Shelf of brass idols</figcaption></button></figure>
+      <figure class="g" data-cat="idols"><button type="button" data-i="9"><img src="images/shop-08.jpg" alt="Brass deity idols" loading="lazy"><figcaption>Brass deity idols</figcaption></button></figure>
+      <figure class="g" data-cat="idols"><button type="button" data-i="10"><img src="images/shop-09.jpg" alt="Silver-finish idols" loading="lazy"><figcaption>Silver-finish idols</figcaption></button></figure>
+      <figure class="g" data-cat="idols"><button type="button" data-i="11"><img src="images/shop-15.jpg" alt="Devi murti in red saree" loading="lazy"><figcaption>Devi murti in red saree</figcaption></button></figure>
+      <figure class="g" data-cat="idols"><button type="button" data-i="12"><img src="images/shop-17.jpg" alt="Devi murti with lotus" loading="lazy"><figcaption>Devi murti with lotus</figcaption></button></figure>
+      <figure class="g" data-cat="idols"><button type="button" data-i="13"><img src="images/shop-21.jpg" alt="Devi murti with child" loading="lazy"><figcaption>Devi murti with child</figcaption></button></figure>
+      <figure class="g" data-cat="brass"><button type="button" data-i="14"><img src="images/shop-04.jpg" alt="Copper kalash and lota" loading="lazy"><figcaption>Copper kalash and lota</figcaption></button></figure>
+      <figure class="g" data-cat="brass"><button type="button" data-i="15"><img src="images/shop-25.jpg" alt="Brass lamps and pooja items" loading="lazy"><figcaption>Brass lamps and pooja items</figcaption></button></figure>
+      <figure class="g" data-cat="samagri"><button type="button" data-i="16"><img src="images/shop-10.jpg" alt="Shankh, cowries and havan items" loading="lazy"><figcaption>Shankh, cowries and havan items</figcaption></button></figure>
+      <figure class="g" data-cat="samagri"><button type="button" data-i="17"><img src="images/shop-11.jpg" alt="Cowries, shells and yantras" loading="lazy"><figcaption>Cowries, shells and yantras</figcaption></button></figure>
+      <figure class="g" data-cat="samagri"><button type="button" data-i="18"><img src="images/shop-12.jpg" alt="Rudraksha beads and yantras" loading="lazy"><figcaption>Rudraksha beads and yantras</figcaption></button></figure>
+      <figure class="g" data-cat="samagri"><button type="button" data-i="19"><img src="images/shop-13.jpg" alt="Shankh, beads and gomti chakra" loading="lazy"><figcaption>Shankh, beads and gomti chakra</figcaption></button></figure>
+      <figure class="g" data-cat="samagri"><button type="button" data-i="20"><img src="images/shop-16.jpg" alt="Pooja thalis and boxed items" loading="lazy"><figcaption>Pooja thalis and boxed items</figcaption></button></figure>
+      <figure class="g" data-cat="samagri"><button type="button" data-i="21"><img src="images/shop-19.jpg" alt="Samagri shelves" loading="lazy"><figcaption>Samagri shelves</figcaption></button></figure>
+      <figure class="g" data-cat="samagri"><button type="button" data-i="22"><img src="images/shop-22.jpg" alt="Agarbatti and packets" loading="lazy"><figcaption>Agarbatti and packets</figcaption></button></figure>
+      <figure class="g" data-cat="samagri"><button type="button" data-i="23"><img src="images/shop-23.jpg" alt="Gulal and rangoli colours" loading="lazy"><figcaption>Gulal and rangoli colours</figcaption></button></figure>
+      <figure class="g" data-cat="samagri"><button type="button" data-i="24"><img src="images/shop-24.jpg" alt="Shelves of pooja items" loading="lazy"><figcaption>Shelves of pooja items</figcaption></button></figure>
+      <figure class="g" data-cat="samagri"><button type="button" data-i="25"><img src="images/shop-28.jpg" alt="Agarbatti and dhoop boxes" loading="lazy"><figcaption>Agarbatti and dhoop boxes</figcaption></button></figure>
+      <figure class="g" data-cat="samagri"><button type="button" data-i="26"><img src="images/shop-31.jpg" alt="Bhimseni kapoor" loading="lazy"><figcaption>Bhimseni kapoor</figcaption></button></figure>
+      <figure class="g" data-cat="decor"><button type="button" data-i="27"><img src="images/shop-06.jpg" alt="Flower garlands and cloth" loading="lazy"><figcaption>Flower garlands and cloth</figcaption></button></figure>
+      <figure class="g" data-cat="decor"><button type="button" data-i="28"><img src="images/shop-14.jpg" alt="Glass case of decoration items" loading="lazy"><figcaption>Glass case of decoration items</figcaption></button></figure>
+      <figure class="g" data-cat="decor"><button type="button" data-i="29"><img src="images/shop-20.jpg" alt="Devotional photo frames" loading="lazy"><figcaption>Devotional photo frames</figcaption></button></figure>
+      <figure class="g" data-cat="decor"><button type="button" data-i="30"><img src="images/shop-26.jpg" alt="Marigold garlands" loading="lazy"><figcaption>Marigold garlands</figcaption></button></figure>
+      </div>
+    </div>
+  </section>
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Like something you see?</h2>
+      <p style="margin-top:8px">Send us a screenshot on WhatsApp and we'll keep it ready for you.</p>
+      <div class="cta">
+        <a class="btn btn-light" href="https://wa.me/918208001265?text=Namaste%2C%20I%20saw%20an%20item%20in%20your%20gallery." target="_blank" rel="noopener">WhatsApp us</a>
+        <a class="btn btn-outline" href="index.html#visit">Visit the shop</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Mata Jivdani Pooja Sahitya Bhandar, Virar East</span>
+    <span>Proprietor: Kalpesh Sheth · 082080 01265</span>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/918208001265" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4Z"/></svg>
+</a>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <img id="lbImg" alt="">
+  <p class="cap" id="lbCap"></p>
+  <button class="x" type="button" id="lbX" aria-label="Close">✕</button>
+  <button class="pv" type="button" id="lbP" aria-label="Previous photo">‹</button>
+  <button class="nx" type="button" id="lbN" aria-label="Next photo">›</button>
+</div>
+
+<a class="fab" href="https://wa.me/918208001265" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4Z"/></svg>
+</a>
+
+<script>
+const figs=[...document.querySelectorAll(".g")],tabs=document.querySelectorAll(".tabs button");
+function filter(f){
+  tabs.forEach(t=>t.classList.toggle("on",t.dataset.f===f));
+  figs.forEach(g=>g.hidden=!(f==="all"||g.dataset.cat===f));
+}
+tabs.forEach(t=>t.onclick=()=>{filter(t.dataset.f);history.replaceState(null,"",t.dataset.f==="all"?location.pathname:"#"+t.dataset.f)});
+const h=location.hash.slice(1);if(h&&document.querySelector('[data-f="'+h+'"]'))filter(h);
+
+const lb=document.getElementById("lb"),img=document.getElementById("lbImg"),cap=document.getElementById("lbCap");
+let cur=0,last=null;
+const visible=()=>figs.filter(g=>!g.hidden);
+function show(k){const v=visible();cur=(k+v.length)%v.length;const i=v[cur].querySelector("img");img.src=i.src;img.alt=i.alt;cap.innerHTML="<b>"+(cur+1)+" / "+v.length+"</b>"+i.alt}
+figs.forEach(g=>g.querySelector("button").onclick=e=>{last=e.currentTarget;lb.hidden=false;document.body.style.overflow="hidden";show(visible().indexOf(g));document.getElementById("lbX").focus()});
+function close(){lb.hidden=true;document.body.style.overflow="";last&&last.focus()}
+document.getElementById("lbX").onclick=close;
+document.getElementById("lbP").onclick=()=>show(cur-1);
+document.getElementById("lbN").onclick=()=>show(cur+1);
+lb.addEventListener("click",e=>{if(e.target===lb)close()});
+document.addEventListener("keydown",e=>{if(lb.hidden)return;if(e.key==="Escape")close();if(e.key==="ArrowLeft")show(cur-1);if(e.key==="ArrowRight")show(cur+1)});
+let x0=null;lb.addEventListener("touchstart",e=>x0=e.touches[0].clientX,{passive:true});
+lb.addEventListener("touchend",e=>{if(x0===null)return;const d=e.changedTouches[0].clientX-x0;if(Math.abs(d)>40)show(cur+(d<0?1:-1));x0=null});
+</script>
+</body>
+</html>
